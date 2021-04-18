@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import jQuery from 'jquery';
-import { fetchQuestion } from '../actions/index';
+import { fetchQuestion, setAnswer } from '../actions/index';
 
 const InputField = (props) => {
 
-  const [answer, setAnswer] = useState();
+  const [answer, setAnswerField] = useState();
 
   const handleChange = (event) => {
-    setAnswer(event.target.value)
+    setAnswerField(event.target.value)
   }
 
   const showAnswerContainer = () => {
@@ -22,8 +22,9 @@ const InputField = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    props.setAnswer(answer);
     showAnswerContainer();
-    setAnswer("");
+    setAnswerField("");
   }
 
   const answeredCorrectly = () => {
@@ -44,5 +45,6 @@ const matpStateToProps = state => {
 }
 
 export default connect(matpStateToProps, {
-  fetchQuestion
+  fetchQuestion,
+  setAnswer
 })(InputField);

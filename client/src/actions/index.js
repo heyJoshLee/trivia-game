@@ -6,5 +6,13 @@ export const fetchQuestion = () => async dispatch => {
   dispatch({
     type: "FETCH_QUESTION",
     payload: response.data
-  })
-}
+  });
+};
+
+export const setAnswer = (answer) => {
+  console.log("ACTION")
+  return {
+    type: "SET_ANSWER",
+    payload: answer
+  };
+};
