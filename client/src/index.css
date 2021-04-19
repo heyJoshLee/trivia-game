@@ -6,6 +6,7 @@ body {
     rgba(223, 28, 114, 1) 2%,
     rgba(51, 87, 159, 1) 89%
   );
+  background-size: 400%;
 }
 
 body,
@@ -15,9 +16,12 @@ html {
 }
 
 .question-container {
-  height: 200px;
-  margin-top: 200px;
-  padding: 50px;
+  position: relative;
+  height: 80%;
+  margin-top: 10px;
+  padding: 0 50px 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 input {
@@ -47,13 +51,49 @@ input {
   top: 0;
   left: 0;
   right: 0;
-  height: 40%;
-  width: 80%;
-  margin: 20% auto;
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
   background-color: white;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
   font-size: 42px;
   font-family: Arial;
+}
+
+.choices {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.choice {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 15px;
+  margin: 10px 10px;
+}
+
+.choice:hover {
+  background-color: rgba(13, 131, 167, 0.6);
+  cursor: pointer;
+}
+
+#progress-bar {
+  height: 40px;
+  border: 4px solid black;
+  width: 100%;
+  margin: 10px auto;
+}
+
+#progress-bar #inside {
+  background-color: green;
+  width: 100%;
+  height: 100%;
+}
+
+.player-info {
+  color: snow;
+  text-align: center;
+  font-size: 24px;
 }
